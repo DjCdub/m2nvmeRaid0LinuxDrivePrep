@@ -2,31 +2,30 @@
 how to setup and format drives for a clean linux install
 # ***Step 1: Pre-Installation Preparation***
 ### Backup Data: Ensure all important data is backed up, as this process will erase existing data.
-### Boot into Live Ubuntu Environment: Use a Live USB or DVD containing the Ubuntu installer.
+#### Boot into Live Ubuntu Environment: Use a Live USB or DVD containing the Ubuntu installer.
 **Open Terminal: Access the terminal in the live environment.**
 # ***Step 2: RAID Setup***
-## **Install mdadm (if not installed):**
+#### **Install mdadm (if not installed):**
 ```shell
 command sudo apt update
 command sudo apt install mdadm
 ```
-*Remove Existing RAID Configuration (if necessary):*
-arduino
-Copy code
+**Remove Existing RAID Configuration (if necessary):**
+```Shell
 sudo mdadm --stop /dev/md0
 sudo mdadm --remove /dev/md0
-Partition Drives:
-Use fdisk or gdisk to partition each drive according to your specifications.
-Create RAID array:
-css
-Copy code
-sudo mdadm --create --verbose /dev/md0 --level=stripe --raid-devices=2 /dev/nvme0n1pX /dev/nvme1n1pX
-(Replace X with the appropriate partition numbers)
-Step 3: Partitioning RAID Array
-Create Partitions:
-bash
-Copy code
+```
+##**Partition Drives:**
+####Use fdisk or gdisk to partition each drive according to your specifications.
+###Create RAID array:
+```Shell
+sudo mdadm --create --verbose /dev/md0 --level=stripe --raid-devices=2 /dev/nvme0n1p[X] /dev/nvme1n1p[X]
+**(Replace ' [X] ' with the appropriate partition numbers)**
+#**Step 3: Partitioning RAID Array**
+###Create Partitions:
+```Shell
 sudo fdisk /dev/md0
+```
 Follow your partitioning scheme:
 ESP: Type: EFI System (EF00), Size: 15-1023 MiB
 /EFI/boot: Type: Linux filesystem (8300), Size: 1024-2047 MiB
