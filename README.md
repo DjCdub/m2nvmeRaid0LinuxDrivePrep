@@ -6,9 +6,9 @@ how to setup and format drives for a clean linux install
 **Open Terminal: Access the terminal in the live environment.**
 # ***Step 2: RAID Setup***
 ## **Install mdadm (if not installed):**
-```zsh
-sudo apt update
-sudo apt install mdadm
+```shell
+command sudo apt update
+command sudo apt install mdadm
 ```
 *Remove Existing RAID Configuration (if necessary):*
 arduino
