@@ -51,8 +51,9 @@ command sudo mount /dev/md0p2 /mnt/efi_boot
 
 command sudo mkdir /mnt/root
 command sudo mount /dev/md0p3 /mnt/root
+```
 #**Step 5: Installation**
-Install Ubuntu: or whichever OS
+##Install Ubuntu: or whichever OS
 ##*Choose "Something else" during installation.*
 #**Assign partitions to mount points:**
 ```
