@@ -1,15 +1,15 @@
 # m2nvmeRaid0LinuxDrivePrep
 how to setup and format drives for a clean linux install
-### ***Step 1: Pre-Installation Preparation***
-## Backup Data: Ensure all important data is backed up, as this process will erase existing data.
-# Boot into Live Ubuntu Environment: Use a Live USB or DVD containing the Ubuntu installer.
-Open Terminal: Access the terminal in the live environment.
-Step 2: RAID Setup
-Install mdadm (if not installed):
-sql
-Copy code
+# ***Step 1: Pre-Installation Preparation***
+### Backup Data: Ensure all important data is backed up, as this process will erase existing data.
+### Boot into Live Ubuntu Environment: Use a Live USB or DVD containing the Ubuntu installer.
+**Open Terminal: Access the terminal in the live environment.**
+# ***Step 2: RAID Setup***
+## **Install mdadm (if not installed):**
+'''zsh
 sudo apt update
 sudo apt install mdadm
+'''
 Remove Existing RAID Configuration (if necessary):
 arduino
 Copy code
